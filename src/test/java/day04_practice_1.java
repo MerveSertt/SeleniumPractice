@@ -8,5 +8,6 @@ public class day04_practice_1 {
         //Carrer Opportunities In QA linkine tıklayalım
         //Başlığın Opportunities içerdiğini test edelim
         //Tekrar anasayfaya dönelim ve url'in https://techproeducation.com/ olduğunu doğrulayalım
+
     }
 }
