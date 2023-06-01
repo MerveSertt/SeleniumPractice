@@ -1,9 +1,11 @@
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
+import java.util.List;
 
 public class day03_practice_1 {
     public static void main(String[] args) {
@@ -25,7 +27,27 @@ public class day03_practice_1 {
 
         driver.get("https://www.amazon.com");
 
-        driver.findElement(By.xpath("(//div[@class='nav-search-field '])[1]")).sendKeys("iphone", Keys.ENTER);
+        driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("iphone", Keys.ENTER);
+
+        WebElement sonucYazisi = driver.findElement(By.xpath("(//div[@class='sg-col-inner']) [1]"));
+        System.out.println(sonucYazisi.getText());
+
+
+        for (int i = 0; i < 5; i++) {
+            List <WebElement> sonuclar = driver.findElements(By.xpath("//div[@class='a-section aok-relative s-image-fixed-height']"));
+            sonuclar.get(i).click();
+            System.out.println((i+1) +". Sayfa Başlığı: " + driver.getTitle());
+            driver.navigate().back();
+        }
+
+        driver.close();
+
+
+
+
+
+
+
 
         /*
         Çözüm
