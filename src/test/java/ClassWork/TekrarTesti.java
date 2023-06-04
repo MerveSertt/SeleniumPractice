@@ -44,7 +44,9 @@ public class TekrarTesti {
         String sonucYazisiString = sonucYazisi.getText();
         String[] sonuclar = sonucYazisiString.split(" ");
         String sonucSayisi = sonuclar[1];
-        int sonucSayi = Integer.parseInt(sonucSayisi);
+        String sadecesayi = sonucSayisi.replace(".","");
+        System.out.println(sadecesayi);
+        int sonucSayi = Integer.parseInt(sadecesayi);
         System.out.println("Sonuç Sayısı: " + sonucSayisi);
 
         if (sonucSayi>10000000){
